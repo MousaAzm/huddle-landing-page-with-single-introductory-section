@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+$color-violet: hsl(257, 40%, 49%);
+$color-soft-magenta: hsl(300, 69%, 71%);
+$color-white: #fff;
+$color-grey: rgb(226, 223, 223);
+$font-family-open-sans: "Open Sans", sans-serif;
+$font-family-poppins: "Poppins", sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-open-sans;
+}
+
+.cover {
+    min-height: 100vh;
+    padding: 50px;
+    background-color: $color-violet;
+    background-image: url("../images/bg-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    header {
+        padding: 0 20px 20px 20px;
+        img {
+            width: 220px;
+        }
+    }
+    main {
+        padding: 40px 20px 0 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px;
+
+        .col-left {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .col-right {
+            padding: 55px 20px 20px 20px;
+            color: $color-white;
+            h1 {
+                font-size: 42px;
+                font-weight: 600;
+                font-family: $font-family-poppins;
+            }
+            p {
+                font-size: 17px;
+                font-weight: 400;
+                line-height: 30px;
+                padding: 20px 40px 20px 0;
+                color: $color-grey;
+            }
+            button {
+                padding: 15px 20px;
+                width: 200px;
+                border-radius: 30px;
+                cursor: pointer;
+                border: 2px solid $color-white;
+                color: $color-violet;
+                font-size: 18px;
+                transition: all 0.3s;
+                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+                &:hover {
+                    color: $color-white;
+                    background-color: $color-soft-magenta;
+                    border: 2px solid $color-soft-magenta;
+                }
+            }
+        }
+    }
+    footer {
+        padding: 0 20px;
+        display: flex;
+        justify-content: flex-end;
+        ul {
+            display: flex;
+            flex-direction: row;
+            li {
+                list-style: none;
+                padding: 8px;
+                a {
+                    font-size: 20px;
+                    line-height: 45px;
+                    display: block;
+                    width: 45px;
+                    height: 45px;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                    color: $color-white;
+                    border: 1px solid $color-white;
+                    border-radius: 100%;
+                    outline: 0;
+                    text-align: center;
+                    &:hover {
+                        color: $color-soft-magenta;
+                        border: 1px solid $color-soft-magenta;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .cover {
+        background-size: cover !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .col-left {
+        img {
+            height: 100% !important;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .cover {
+        header {
+            img {
+                width: 170px !important;
+            }
+        }
+        main {
+            display: flex !important;
+            flex-direction: column;
+            .col-left {
+                img {
+                    height: auto !important;
+                }
+            }
+            .col-right {
+                h1 {
+                    font-size: 32px !important;
+                }
+                button {
+                    width: 170px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .cover {
+        background-image: url("../images/bg-mobile.svg") !important;
+        background-position: top !important;
+        background-size: contain !important;
+        padding: 30px 15px !important;
+        header {
+            img {
+                width: 150px !important;
+            }
+        }
+        main {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            .col-left {
+                img {
+                    height: auto !important;
+                }
+            }
+            .col-right {
+                padding: 0 !important;
+                text-align: center !important;
+                h1 {
+                    font-size: 28px !important;
+                }
+                p {
+                    padding: 20px 0 !important;
+                }
+                button {
+                    width: 250px !important;
+                }
+            }
+        }
+        footer {
+            justify-content: center !important;
+            margin-top: 45px;
+        }
+    }
+}
+
+@media (max-width: 488px) {
+    .cover {
+        main {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            .col-left {
+                img {
+                    height: auto !important;
+                }
+            }
+            .col-right {
+                padding: 0 !important;
+                text-align: center !important;
+                h1 {
+                    font-size: 28px !important;
+                }
+                p {
+                    padding: 20px 0 !important;
+                }
+                button {
+                    padding: 10px 20px !important;
+                    width: 215px !important;
+                    font-size: 15px !important;
+                }
+            }
+        }
+        footer {
+            a {
+                width: 35px !important;
+                height: 35px !important;
+                line-height: 35px !important;
+                font-size: 17px !important;
+            }
+        }
+    }
+}
